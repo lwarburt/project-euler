@@ -3,13 +3,11 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.StrictMath.sqrt;
 
 public class PrimeTest {
     private List<Integer> primes = new ArrayList<>();
 
     public PrimeTest(int max) {
-        double limit = sqrt(max);
         primes.add(2);
         for (int it = 3; it <= max; it += 2) { //creates list of odd numbers up to the maximum
             primes.add(it);
@@ -24,7 +22,7 @@ public class PrimeTest {
 
     public int nthPrime(int n) {
         new PrimeTest(n * 10);
-        return (primes.get(n));
+        return (primes.get(n - 1));
     }
 
     @Override
